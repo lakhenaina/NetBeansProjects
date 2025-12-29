@@ -1,3 +1,4 @@
+//create a servlet that displays the name provided from HTML form.
 import javax.servlet.http.*;
 import java.io.*;
 import javax.servlet.annotation.*;

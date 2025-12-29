@@ -1,3 +1,4 @@
+//create a servlet that displays welcome to servlet and also creatw web.xml (deployment descriptor) file.
 import javax.servlet.http.*;
 import java.io.*;
 import javax.servlet.annotation.*;
