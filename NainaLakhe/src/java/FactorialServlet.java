@@ -5,21 +5,22 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/OddEvenServlet")
-public class OddEvenServlet extends HttpServlet {
+@WebServlet("/FactorialServlet")
+public class FactorialServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int num = Integer.parseInt(request.getParameter("num"));
-        String result = (num % 2 == 0) ? "Even" : "Odd";
+        long fact = 1;
+        for(int i=1;i<=num;i++) fact *= i;
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h1>Number " + num + " is " + result + "</h1>");
-        out.println("<a href='oddEven.html'>Go Back</a>");
+        out.println("<h1>Factorial of " + num + " is " + fact + "</h1>");
+        out.println("<a href='factorial.html'>Go Back</a>");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("oddEven.html");
+        response.sendRedirect("factorial.html");
     }
 }
